@@ -1,0 +1,1 @@
+# argocd_payments-service-example
