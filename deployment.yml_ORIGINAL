@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ms-payments
+  name: ms-payments
+  namespace: default 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-payments
+  template:
+    metadata:
+      labels:
+        app: ms-payments
+    spec:
+      containers:
+        - image: ${container_images}
+          name: payments-service
+          ports:
+            - containerPort: 8080
+              name: ms-payments 
+              protocol: TCP
+          env:
+            - name: APP_ARGS
+              valueFrom:
+                configMapKeyRef: 
+                  name: map.payments
+                  key: APP_ARGS
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+# strategy:
+#     type: RollingUpdate
+#     rollingUpdate:
+#       maxSurge: 25%
+#       maxUnavailable: 25%
+#   revisionHistoryLimit: 10
+#   progressDeadlineSeconds: 600
+#   paused: false            
