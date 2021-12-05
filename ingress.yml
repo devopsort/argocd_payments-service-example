@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /ms-ingress
+      - path: /ms-payments
         backend:
-          serviceName: ms-ingress-svc
+          serviceName: ms-payments-svc
           servicePort: 30004
