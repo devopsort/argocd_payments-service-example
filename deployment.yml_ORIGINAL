@@ -16,7 +16,7 @@ spec:
         app: ms-payments
     spec:
       containers:
-        - image: ${container_images}
+        - image: #IMAGEN#
           name: payments-service
           ports:
             - containerPort: 8080
