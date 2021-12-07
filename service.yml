@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ms-payments-svc
-  labels:
-     app: ms-payments
+  namespace: default
 spec:
   type: NodePort
-  ports:
-  - port: 8080
-    nodePort: 30004
-    protocol: TCP
   selector:
-     app: ms-payments
+    app: ms-payments
+  ports:
+  - protocol: TCP
+    port: 30004
+    targetPort: 8080
+    name: default
