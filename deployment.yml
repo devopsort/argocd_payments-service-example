@@ -16,7 +16,7 @@ spec:
         app: ms-payments
     spec:
       containers:
-        - image: 473718918692.dkr.ecr.us-east-1.amazonaws.com/payments-service:15_test
+        - image: 473718918692.dkr.ecr.us-east-1.amazonaws.com/payments-service:5_test
           name: payments-service
           ports:
             - containerPort: 8080
