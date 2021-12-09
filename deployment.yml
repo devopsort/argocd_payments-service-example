@@ -16,18 +16,12 @@ spec:
         app: ms-payments
     spec:
       containers:
-        - image: 473718918692.dkr.ecr.us-east-1.amazonaws.com/payments-service:5_test
+        - image: 794892305647.dkr.ecr.us-east-1.amazonaws.com/payments-service:3_test
           name: payments-service
           ports:
             - containerPort: 8080
               name: ms-payments 
               protocol: TCP
-          env:
-            - name: APP_ARGS
-              valueFrom:
-                configMapKeyRef: 
-                  name: map.payments
-                  key: APP_ARGS
           resources:
             limits:
               memory: "128Mi"
