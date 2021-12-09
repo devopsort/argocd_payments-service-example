@@ -13,4 +13,4 @@ spec:
         pathType: Prefix
         backend:
           serviceName: ms-payments-svc
-          servicePort: 30004
+          servicePort: 8080
